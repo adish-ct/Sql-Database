@@ -92,5 +92,45 @@ COMMIT;
 ROLLBACK;
 
 
+/*
+
+Concurrency
+
+    Concurrency refers to the ability of a system to execute multiple tasks or processes simultaneously, 
+    making progress on multiple fronts at the same time. In the context of databases and programming, concurrency 
+    typically involves multiple transactions or operations occurring concurrently. Here are some key aspects of concurrency:
+
+*/
 
 
+/* 
+    How can we solve concurrency problems?
+
+    Locking:
+    Use locks to control access to shared resources. A lock prevents other transactions from accessing the resource until the lock is released.
+    Two common types of locks are shared locks (allowing multiple transactions to read but not write) and exclusive locks (allowing only one transaction to write).
+
+    Transactions:
+    Use database transactions to group related operations and ensure they either all succeed (commit) or all fail (rollback).
+    Transactions provide atomicity, consistency, isolation, and durability (ACID properties), helping maintain data integrity.
+
+    Isolation Levels:
+    Adjust the isolation level of transactions to control the degree of visibility of uncommitted changes to other transactions.
+    Common isolation levels include READ UNCOMMITTED, READ COMMITTED, REPEATABLE READ, and SERIALIZABLE.
+
+    Optimistic Concurrency Control:
+    Allow multiple transactions to proceed concurrently without acquiring locks initially.
+    Detect conflicts at the time of committing transactions by checking whether the data has been modified since it was read.
+
+    Timestamping:
+    Assign a timestamp to each transaction or data item to track the order of operations.
+    Use timestamps to determine the validity of data and detect conflicts.
+
+    Deadlock Detection and Prevention:
+    Implement mechanisms to detect and resolve deadlocks, where transactions are waiting for each other's resources.
+    Use timeout mechanisms, deadlock detection algorithms, and prevention strategies.
+
+    Atomic Operations:
+    Use atomic operations or compare-and-swap operations for specific critical sections to avoid race conditions.
+    Ensure that certain operations are performed atomically without interruption.
+ */
